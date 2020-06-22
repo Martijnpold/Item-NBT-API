@@ -18,6 +18,16 @@ public class NBTItem extends NBTCompound {
 
 	/**
 	 * Constructor for NBTItems. The ItemStack will be cloned!
+	 *
+	 * @param item
+	 */
+	@Deprecated
+	public NBTItem(ItemStack item) {
+		this(item, true);
+	}
+
+	/**
+	 * Constructor for NBTItems. The ItemStack will be cloned!
 	 * 
 	 * @param item
 	 */
