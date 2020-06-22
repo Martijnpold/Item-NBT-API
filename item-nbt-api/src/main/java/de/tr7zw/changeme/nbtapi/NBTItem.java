@@ -21,12 +21,12 @@ public class NBTItem extends NBTCompound {
 	 * 
 	 * @param item
 	 */
-	public NBTItem(ItemStack item) {
+	public NBTItem(ItemStack item, boolean clone) {
 		super(null, null);
 		if (item == null || item.getType() == Material.AIR) {
 			throw new NullPointerException("ItemStack can't be null/Air!");
 		}
-		bukkitItem = item.clone();
+		bukkitItem = (clone ? item.clone() : item);
 	}
 
 	@Override
