@@ -48,7 +48,7 @@ public class NBTItem extends NBTCompound {
 	protected void setCompound(Object compound) {
 		Object stack = ReflectionMethod.ITEMSTACK_NMSCOPY.run(null, bukkitItem);
 		ReflectionMethod.ITEMSTACK_SET_TAG.run(stack, compound);
-		bukkitItem = (ItemStack) ReflectionMethod.ITEMSTACK_BUKKITMIRROR.run(null, stack);
+		bukkitItem.setItemMeta(((ItemStack) ReflectionMethod.ITEMSTACK_BUKKITMIRROR.run(null, stack)).getItemMeta());
 	}
 
 	/**
